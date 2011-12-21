@@ -3,7 +3,7 @@
 
 =Screenshots=
 
-*Please note that these screenshots are 5 months old and do not represent the current state of the application.*
+*Please note that these screenshots are from July 2011 and do not represent the current state of the application.*
 
 || Main Activity, showing the list of drugs: || Clicking on a drug's name enables the user to edit it: ||
 || [http://rxdroid.googlecode.com/files/RxDroid-DrugListActivity.png] || [http://rxdroid.googlecode.com/files/RxDroid-DrugEditActivity.png] ||
