@@ -1,9 +1,8 @@
 #summary Selected screenshots.
-#labels Featured
 
 =Screenshots=
 
-*Screenshot date: 2012-02-03*
+*THESE SCREENSHOTS ARE OUTDATED AND DO NOT REPRESENT THE CURRENT STATE OF DEVELOPMENT. NEW ONES WILL BE UPLOADED AS SOON AS I FIND THE TIME TO DO SO.*
 
 || Main Activity, showing the list of drugs: || Clicking on a drug's name enables the user to edit it: ||
 || [http://rxdroid.googlecode.com/files/list.png] || [http://rxdroid.googlecode.com/files/create.png] ||
