@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source "$(dirname $_)/shared.sh" || exit 1
+
+if [[ $# -eq 0 ]]; then
+	FILE=db_$(date +%Y-%m-%d).sqlite
+else
+	FILE="$1"
+fi
+
+[[ ! -e "$FILE" ]] || die "Refusing to overwrite $FILE"
+
+TEMPDB="$DTEMP/.rxdroid-db.sqlite"
+
+echo -n "Copying database to temporary location ... "
+run adb-shell "su -c 'cp /data/data/$PKG/databases/db.sqlite $TEMPDB'"
+echo "done"
+
+echo -n "Pulling database from device ... "
+run adb pull $TEMPDB "$FILE"
+
+echo -n "Removing database at temporary location ... "
+run adb-shell "su -c 'rm $TEMPDB'"
+echo "done"
