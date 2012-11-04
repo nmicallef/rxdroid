@@ -4,8 +4,8 @@
 
 *THESE SCREENSHOTS ARE OUTDATED AND DO NOT REPRESENT THE CURRENT STATE OF DEVELOPMENT. NEW ONES WILL BE UPLOADED AS SOON AS I FIND THE TIME TO DO SO.*
 
-|| Main Activity, showing the list of drugs: || Clicking on a drug's name enables the user to edit it: ||
-|| [http://rxdroid.googlecode.com/files/list.png] || [http://rxdroid.googlecode.com/files/create.png] ||
+|| Main Activity, showing the list of drugs: || Editing a drug: ||
+|| [http://rxdroid.googlecode.com/svn/img/overview.png] || [http://rxdroid.googlecode.com/svn/img/editing.png] ||
 
 || The app's notification: || After clicking on a dose in the drug list ||
-|| [http://rxdroid.googlecode.com/files/notification.png] || [http://rxdroid.googlecode.com/files/intake.png] ||
+|| [http://rxdroid.googlecode.com/svn/img/dose_notification.png] || [http://rxdroid.googlecode.com/svn/img/take_dose.png] ||
