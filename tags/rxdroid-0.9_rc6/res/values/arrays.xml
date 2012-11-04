@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (C) 2011, 2012 Joseph Lehner <joseph.c.lehner@gmail.com>
+ *
+ * This file is part of RxDroid.
+ *
+ * RxDroid is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RxDroid is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RxDroid.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ */
+-->
+
+<resources>   
+    <string-array name="drug_forms">
+    	<item>@string/_title_tablet</item>
+    	<item>@string/_title_injection</item>
+    	<item>@string/_title_drop</item>    	   	
+    	<item>@string/_title_gel</item>
+    	<item>@string/_title_ring</item>
+    	<!-- 
+    	<item>@string/_title_spray</item> 
+    	<item>@string/_title_other</item>
+    	 -->
+    </string-array>
+    
+    <string-array name="drug_repeat">
+    	<item>@string/_title_daily</item>
+    	<item>@string/_title_every_n_days</item>
+    	<item>@string/_title_pick_days</item>
+    	<item>@string/_title_on_demand</item>
+    	<item>@string/_title_21_days_on_7_days_off</item>
+    </string-array>
+    
+    <string-array name="drug_notifications">
+    	<item>@string/_title_doses_and_low_supplies</item>
+    	<item>@string/_title_low_supplies_only</item>    	
+    </string-array>
+    
+    <string-array name="history_size">
+    	<item>@string/_title_history_2_weeks</item>
+    	<item>@string/_title_history_1_month</item>
+    	<item>@string/_title_history_6_months</item>
+    	<item>@string/_title_history_1_year</item>
+    	<item>@string/_title_history_unlimited</item>    	
+    </string-array>
+</resources>
