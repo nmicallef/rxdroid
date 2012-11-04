@@ -1,4 +1,5 @@
 #summary Selected screenshots.
+#labels Featured
 
 =Screenshots=
 
