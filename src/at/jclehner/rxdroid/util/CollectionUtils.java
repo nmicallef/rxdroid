@@ -91,10 +91,6 @@ public final class CollectionUtils
 		return -1;
 	}
 
-	public static <T> boolean contains(T[] array, T e) {
-		return indexOf(e, array) != -1;
-	}
-
 	public static <T> int indexOfByReference(T e, T[] array)
 	{
 		for(int i = 0; i != array.length; ++i)

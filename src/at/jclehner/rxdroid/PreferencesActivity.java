@@ -24,10 +24,8 @@ package at.jclehner.rxdroid;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Formatter;
-import java.util.List;
 import java.util.Locale;
 
 import android.annotation.TargetApi;
@@ -48,7 +46,6 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceGroup;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,7 +53,6 @@ import android.webkit.WebView;
 import android.widget.Toast;
 import at.jclehner.rxdroid.db.Database;
 import at.jclehner.rxdroid.db.DatabaseHelper;
-import at.jclehner.rxdroid.util.CollectionUtils;
 import at.jclehner.rxdroid.util.Util;
 
 @SuppressWarnings("deprecation")
@@ -64,10 +60,6 @@ public class PreferencesActivity extends PreferenceActivityBase implements
 		OnSharedPreferenceChangeListener, OnPreferenceClickListener, OnPreferenceChangeListener
 {
 	private static final String TAG = PreferencesActivity.class.getName();
-
-	private static final String[] KEEP_DISABLED = {
-		Settings.Keys.VERSION, Settings.Keys.DB_STATS
-	};
 
 	private static final int MENU_RESTORE_DEFAULTS = 0;
 
@@ -145,8 +137,6 @@ public class PreferencesActivity extends PreferenceActivityBase implements
 			final String str = new Formatter((Locale) null).format("%1.3fs", millis / 1000f).toString();
 			p.setSummary(getString(R.string._msg_db_stats, str));
 		}
-
-		removeDisabledPreferences(getPreferenceScreen());
 	}
 
 	@Override
@@ -318,26 +308,5 @@ public class PreferencesActivity extends PreferenceActivityBase implements
 			String value = mSharedPreferences.getString(Settings.Keys.LOW_SUPPLY_THRESHOLD, "10");
 			p.setSummary(getString(R.string._summary_min_supply_days, value));
 		}
-	}
-
-	private void removeDisabledPreferences(PreferenceGroup root)
-	{
-		final List<Preference> toRemove = new ArrayList<Preference>();
-
-		for(int i = 0; i != root.getPreferenceCount(); ++i)
-		{
-			final Preference p = root.getPreference(i);
-
-			if(CollectionUtils.contains(KEEP_DISABLED, p.getKey()))
-				continue;
-
-			if(p instanceof PreferenceGroup)
-				removeDisabledPreferences((PreferenceGroup) p);
-			else if(!p.isEnabled())
-				toRemove.add(p);
-		}
-
-		for(Preference p : toRemove)
-			root.removePreference(p);
 	}
 }
