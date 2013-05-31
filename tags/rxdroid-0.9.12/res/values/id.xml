@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * RxDroid - A Medication Reminder
+ * Copyright (C) 2011-2013 Joseph Lehner <joseph.c.lehner@gmail.com>
+ *
+ *
+ * RxDroid is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RxDroid is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RxDroid.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ */
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<item type="id" name="tag_drug_id"/>
+	<item type="id" name="tag_time"/>
+	<item type="id" name="tag_adapter_index"/>
+	<item type="id" name="notification"/>
+	<item type="id" name="notification_intake_pending"/>
+	<item type="id" name="notification_intake_forgotten"/>
+	<item type="id" name="notification_low_supplies"/>	
+	<item type="id" name="fraction_pref_input"/>
+	<item type="id" name="dose_dialog" />
+	<item type="id" name="preference_reset_dialog" />
+	<item type="id" name="drug_save_changes_dialog" />
+	<item type="id" name="drug_discard_dialog" />
+	<item type="id" name="drug_delete_dialog" />
+	<item type="id" name="db_error_dialog" />
+	<item type="id" name="licenses_dialog" />
+</resources>
