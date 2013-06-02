@@ -1,0 +1,38 @@
+0.9.12:
+	* Main view no longer scrolls to the top after a dose was taken
+
+0.9.11-1:
+	* Fixed crash in dose history
+
+0.9.11:
+	* New feature: dose history
+	* Minor bugs fixed
+
+0.9.10:
+	* Setting the refill reminder threshold to "0" effectively disables it.
+	* Disabled light theme on Android 3.x
+	* Bug fixes
+
+0.9.9-1:
+	* Fixed crash on Android 3.2
+
+0.9.9:
+	* Fixed bug that prevented setting the time intervals correctly when using 12-hour clock
+	* Updated Italian translation
+	* Times without a dose are now displayed as "-"
+
+0.9.8:
+	* New language: Italian
+	* App now uses backup frameworks such as 
+	  Google's "Backup & Restore"
+	* Updated icons
+	* Minor bugs fixed
+
+0.9.7-2:
+	* Fixed a crash in "Preferences"
+
+0.9.7:
+	* LED color can now be customized (on devices that support it)
+	* Added a "Quiet hours" option to mute notification sound in a specific time interval
+	* The supply can now be edited by long-pressing the supply info in the main view
+	* Fixed a bug that caused notifications to be displayed at the wrong time
