@@ -25,6 +25,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.holoeverywhere.widget.FrameLayout;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Rect;
@@ -35,16 +37,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import at.jclehner.rxdroid.Fraction.MutableFraction;
 import at.jclehner.rxdroid.db.Database;
 import at.jclehner.rxdroid.db.Database.OnChangeListener;
+import at.jclehner.rxdroid.db.DoseEvent;
 import at.jclehner.rxdroid.db.Drug;
 import at.jclehner.rxdroid.db.Entries;
 import at.jclehner.rxdroid.db.Entry;
-import at.jclehner.rxdroid.db.DoseEvent;
 import at.jclehner.rxdroid.util.DateTime;
 
 /**

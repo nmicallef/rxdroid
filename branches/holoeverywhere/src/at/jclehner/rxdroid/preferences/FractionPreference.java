@@ -127,11 +127,6 @@ public class FractionPreference extends AdvancedDialogPreference<Fraction> imple
 	}
 
 	@Override
-	protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
-		// do nothing
-	}
-
-	@Override
 	protected Object onGetDefaultValue(TypedArray a, int index)
 	{
 		String value = a.getString(index);

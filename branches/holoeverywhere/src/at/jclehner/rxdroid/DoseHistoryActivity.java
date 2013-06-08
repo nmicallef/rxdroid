@@ -21,16 +21,16 @@
 
 package at.jclehner.rxdroid;
 
+import org.holoeverywhere.app.Activity;
+import org.holoeverywhere.app.AlertDialog.Builder;
+import org.holoeverywhere.app.Dialog;
+import org.holoeverywhere.app.DialogFragment;
+
 import android.annotation.TargetApi;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import at.jclehner.rxdroid.Settings.Keys;
@@ -41,7 +41,6 @@ import at.jclehner.rxdroid.util.Components;
 import at.jclehner.rxdroid.util.Extras;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
@@ -74,7 +73,7 @@ import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
  *
  */
 
-public class DoseHistoryActivity extends SherlockFragmentActivity
+public class DoseHistoryActivity extends Activity
 {
 	private Drug mDrug;
 

@@ -21,11 +21,13 @@
 
 package at.jclehner.rxdroid;
 
+import org.holoeverywhere.app.DialogFragment;
+import org.holoeverywhere.app.Dialog;
+
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.view.ViewStub;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.Button;
 import at.jclehner.rxdroid.FractionInputDialog.OnFractionSetListener;
 import at.jclehner.rxdroid.db.Database;

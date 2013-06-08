@@ -399,9 +399,13 @@ public abstract class AdvancedDialogPreference<T extends Serializable> extends D
 	}
 
 	@Override
-	protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
+	protected final void onPrepareDialogBuilder(android.app.AlertDialog.Builder builder) {
 		// do nothing
 	}
+
+	/*protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
+		// do nothing
+	}*/
 
 	@Override
 	protected Parcelable onSaveInstanceState()

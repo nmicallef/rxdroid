@@ -24,17 +24,18 @@ package at.jclehner.rxdroid;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.holoeverywhere.app.DatePickerDialog;
+import org.holoeverywhere.app.DatePickerDialog.OnDateSetListener;
+import org.holoeverywhere.app.Dialog;
+import org.holoeverywhere.app.DialogFragment;
+import org.holoeverywhere.widget.DatePicker;
+
 import android.annotation.TargetApi;
-import android.app.DatePickerDialog;
-import android.app.DatePickerDialog.OnDateSetListener;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnShowListener;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.DatePicker;
 import at.jclehner.rxdroid.util.DateTime;
 
 public class DatePickerFragment extends DialogFragment implements OnShowListener

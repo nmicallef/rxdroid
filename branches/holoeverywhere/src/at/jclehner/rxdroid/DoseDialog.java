@@ -23,7 +23,8 @@ package at.jclehner.rxdroid;
 
 import java.util.Date;
 
-import android.app.AlertDialog;
+import org.holoeverywhere.app.AlertDialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -37,10 +38,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import at.jclehner.rxdroid.FractionInput.OnChangedListener;
 import at.jclehner.rxdroid.db.Database;
+import at.jclehner.rxdroid.db.DoseEvent;
 import at.jclehner.rxdroid.db.Drug;
 import at.jclehner.rxdroid.db.Entries;
 import at.jclehner.rxdroid.db.Entry;
-import at.jclehner.rxdroid.db.DoseEvent;
 import at.jclehner.rxdroid.db.Schedule;
 
 public class DoseDialog extends AlertDialog implements OnChangedListener, Database.OnChangeListener

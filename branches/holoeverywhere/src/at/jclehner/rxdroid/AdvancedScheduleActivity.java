@@ -23,7 +23,8 @@ package at.jclehner.rxdroid;
 
 import java.util.BitSet;
 
-import android.app.ListActivity;
+import org.holoeverywhere.app.ListActivity;
+
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.os.Bundle;

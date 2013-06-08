@@ -21,7 +21,8 @@
 
 package at.jclehner.rxdroid;
 
-import android.app.AlertDialog;
+import org.holoeverywhere.app.AlertDialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;

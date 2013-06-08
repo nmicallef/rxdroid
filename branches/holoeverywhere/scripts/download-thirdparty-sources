@@ -9,6 +9,7 @@ GIT_REPOS=(
 	"DragSortListView git://github.com/bauerca/drag-sort-listview.git library"
 	"ActionBarSherlock git://github.com/JakeWharton/ActionBarSherlock.git actionbarsherlock" 
 	"HoloEverywhere https://github.com/Prototik/HoloEverywhere library"
+	"HoloEverywherePreferences https://github.com/Prototik/HoloEverywhere addons/preferences"
 )
 
 THIRDPARTY=thirdparty

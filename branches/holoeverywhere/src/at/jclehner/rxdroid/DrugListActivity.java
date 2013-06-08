@@ -28,16 +28,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import org.holoeverywhere.app.AlertDialog;
+import org.holoeverywhere.app.DatePickerDialog.OnDateSetListener;
+import org.holoeverywhere.app.Dialog;
+import org.holoeverywhere.widget.DatePicker;
+
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.app.DatePickerDialog.OnDateSetListener;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -55,7 +56,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.ViewStub;
-import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 import at.jclehner.rxdroid.Fraction.MutableFraction;
@@ -85,7 +85,6 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.mobeta.android.dslv.DragSortListView;
 
 public class DrugListActivity extends SherlockFragmentActivity implements OnLongClickListener,
@@ -551,7 +550,7 @@ public class DrugListActivity extends SherlockFragmentActivity implements OnLong
 
 	@SuppressWarnings("deprecation")
 	@Override
-	protected Dialog onCreateDialog(int id, Bundle args)
+	protected android.app.Dialog onCreateDialog(int id, Bundle args)
 	{
 		if(id == R.id.dose_dialog)
 			return new DoseDialog(this);
@@ -560,7 +559,7 @@ public class DrugListActivity extends SherlockFragmentActivity implements OnLong
 			final String msg = args.getString("msg");
 			final String onceId = args.getString("once_id");
 
-			final AlertDialog.Builder ab = new AlertDialog.Builder(this);
+			final android.app.AlertDialog.Builder ab = new android.app.AlertDialog.Builder(this);
 			ab.setIcon(android.R.drawable.ic_dialog_info);
 			ab.setTitle(R.string._title_info);
 			ab.setMessage(msg);
@@ -583,7 +582,7 @@ public class DrugListActivity extends SherlockFragmentActivity implements OnLong
 
 	@SuppressWarnings("deprecation")
 	@Override
-	protected void onPrepareDialog(int id, Dialog dialog, Bundle args)
+	protected void onPrepareDialog(int id, android.app.Dialog dialog, Bundle args)
 	{
 		if(id == R.id.dose_dialog)
 		{
@@ -815,6 +814,7 @@ public class DrugListActivity extends SherlockFragmentActivity implements OnLong
 
 	private final OnClickAndLongClickListener mDateClickListener = new OnClickAndLongClickListener() {
 
+		@SuppressWarnings("deprecation")
 		@Override
 		public boolean onLongClick(View v)
 		{
@@ -830,7 +830,7 @@ public class DrugListActivity extends SherlockFragmentActivity implements OnLong
 			return true;*/
 
 			DatePickerFragment datePicker = DatePickerFragment.newInstance(mCurrentDate, DrugListActivity.this);
-			datePicker.show(getSupportFragmentManager(), "datePicker");
+			datePicker.show(getSupportFragmentManager());
 			return true;
 		}
 
