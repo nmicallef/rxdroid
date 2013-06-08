@@ -41,7 +41,7 @@ import android.widget.LinearLayout;
  * @author Joseph Lehner
  *
  */
-@TargetApi(11)
+/*@TargetApi(11)
 public class NumberPickerWrapper extends LinearLayout
 {
 	private static final int MIN_DEFAULT = 0;
@@ -243,4 +243,4 @@ public class NumberPickerWrapper extends LinearLayout
 				setWrapSelectorWheel(true);
 		}
 	}
-}
+}*/

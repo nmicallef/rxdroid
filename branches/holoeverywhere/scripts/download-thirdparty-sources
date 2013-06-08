@@ -5,10 +5,10 @@ source "$(dirname $_)/shared.sh"
 readonly MISCDIR="$(dirname $0)/misc"
 
 GIT_REPOS=( 
-	"NumberPicker git://github.com/mrn/numberpicker.git lib" 
+#	"NumberPicker git://github.com/mrn/numberpicker.git lib" 
 	"DragSortListView git://github.com/bauerca/drag-sort-listview.git library"
 	"ActionBarSherlock git://github.com/JakeWharton/ActionBarSherlock.git actionbarsherlock" 
-#	"HoloEverywhere https://github.com/Prototik/HoloEverywhere library"
+	"HoloEverywhere https://github.com/Prototik/HoloEverywhere library"
 )
 
 THIRDPARTY=thirdparty

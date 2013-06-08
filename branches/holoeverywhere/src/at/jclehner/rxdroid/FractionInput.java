@@ -21,6 +21,9 @@
 
 package at.jclehner.rxdroid;
 
+import org.holoeverywhere.widget.NumberPicker;
+import org.holoeverywhere.widget.NumberPicker.OnValueChangeListener;
+
 import android.content.Context;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -33,7 +36,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import at.jclehner.androidutils.InstanceState;
 import at.jclehner.androidutils.InstanceState.SaveState;
-import at.jclehner.rxdroid.NumberPickerWrapper.OnValueChangeListener;
 import at.jclehner.rxdroid.util.CollectionUtils;
 
 /**
@@ -58,9 +60,9 @@ public class FractionInput extends LinearLayout
 	public static final int MODE_FRACTION = 2;
 	public static final int MODE_INVALID = 3;
 
-	private NumberPickerWrapper mIntegerPicker;
-	private NumberPickerWrapper mNumeratorPicker;
-	private NumberPickerWrapper mDenominatorPicker;
+	private NumberPicker mIntegerPicker;
+	private NumberPicker mNumeratorPicker;
+	private NumberPicker mDenominatorPicker;
 	private TextView mFractionBar;
 	private Button mModeSwitcher;
 
@@ -85,19 +87,19 @@ public class FractionInput extends LinearLayout
 		LayoutInflater lf = LayoutInflater.from(context);
 		lf.inflate(R.layout.fraction_input2, this, true);
 
-		mIntegerPicker = (NumberPickerWrapper) findViewById(R.id.integer);
-		mNumeratorPicker = (NumberPickerWrapper) findViewById(R.id.numerator);
-		mDenominatorPicker = (NumberPickerWrapper) findViewById(R.id.denominator);
+		mIntegerPicker = (NumberPicker) findViewById(R.id.integer);
+		mNumeratorPicker = (NumberPicker) findViewById(R.id.numerator);
+		mDenominatorPicker = (NumberPicker) findViewById(R.id.denominator);
 		mFractionBar = (TextView) findViewById(R.id.fraction_bar);
 		mModeSwitcher = (Button) findViewById(R.id.mode_switcher);
 
-		mIntegerPicker.setOnValueChangeListener(mPickerListener);
+		mIntegerPicker.setOnValueChangedListener(mPickerListener);
 		mIntegerPicker.setWrapSelectorWheel(false);
 
-		mNumeratorPicker.setOnValueChangeListener(mPickerListener);
+		mNumeratorPicker.setOnValueChangedListener(mPickerListener);
 		mNumeratorPicker.setWrapSelectorWheel(false);
 
-		mDenominatorPicker.setOnValueChangeListener(mPickerListener);
+		mDenominatorPicker.setOnValueChangedListener(mPickerListener);
 		mDenominatorPicker.setMinValue(1); // must be called before setWrapSelectorWheel!
 		mDenominatorPicker.setWrapSelectorWheel(false);
 
@@ -313,7 +315,7 @@ public class FractionInput extends LinearLayout
 	private OnValueChangeListener mPickerListener = new OnValueChangeListener() {
 
 		@Override
-		public void onValueChange(NumberPickerWrapper picker, int oldVal, int newVal)
+		public void onValueChange(NumberPicker picker, int oldVal, int newVal)
 		{
 			Fraction oldValue = getValue();
 

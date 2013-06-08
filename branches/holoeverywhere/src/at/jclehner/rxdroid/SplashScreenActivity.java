@@ -128,15 +128,6 @@ public class SplashScreenActivity extends SherlockActivity implements OnClickLis
 
 		getSupportActionBar().setSubtitle(dateString);
 
-		try
-		{
-			Class.forName(com.michaelnovakjr.numberpicker.NumberPicker.class.getName());
-		}
-		catch(ClassNotFoundException e)
-		{
-			throw new WrappedCheckedException("NumberPicker library is missing", e);
-		}
-
 		super.onCreate(savedInstanceState);
 	}
 
