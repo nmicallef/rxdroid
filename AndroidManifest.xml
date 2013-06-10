@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="at.jclehner.rxdroid" 
+	android:versionCode="33"	
+	android:versionName="@string/version"
+	android:installLocation="internalOnly" 
+>
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+	<uses-configuration android:reqTouchScreen="stylus" />
+	<uses-configuration android:reqTouchScreen="finger" />
+
+	<uses-feature android:name="android.hardware.vibrate" android:required="false" />
+
+	<application android:icon="@drawable/ic_launcher" 
+	    android:label="@string/app_name"
+	    android:name=".RxDroid" android:allowBackup="true"
+		android:backupAgent=".BackupAgent"
+		android:theme="@style/Theme.RxDroid"
+		android:killAfterRestore="true" android:restoreAnyVersion="false">
+
+		<meta-data android:name="com.google.android.backup.api_key"
+			android:value="AEdPqrEAAAAItIxwJIR2ke6APuwW_W08I3iBMThG3j_Ptg1-dA" 
+		/>
+	
+		<activity android:name=".SplashScreenActivity"
+			android:label="@string/app_name"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:theme="@style/Theme.RxDroid.NoAnimation"
+			android:launchMode="singleTop"
+		>
+		
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>			
+			
+		</activity>
+				
+		<activity android:name=".DrugListActivity"
+		    android:exported="false"
+		    android:uiOptions="none"
+		    android:launchMode="singleTop"
+		    android:configChanges="orientation|screenSize|keyboardHidden"
+		/>
+		
+		<activity android:name=".DoseHistoryActivity"
+		    android:exported="false"
+		    android:uiOptions="none"
+		    android:launchMode="singleTop"
+		    android:configChanges="orientation|screenSize|keyboardHidden"
+		/>
+
+		<activity android:name=".DrugEditActivity"
+		    android:exported="false"
+		    android:windowSoftInputMode="adjustPan"		    
+			android:launchMode="singleTop"
+		    android:configChanges="orientation|screenSize|keyboardHidden"
+		>	    
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+
+				<action android:name="android.intent.action.EDIT" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".PreferencesActivity"
+		    android:exported="false"
+		    android:windowSoftInputMode="adjustPan"
+		    android:configChanges="orientation|screenSize|keyboardHidden"
+		>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name=".DoseTimePreferenceActivity"
+		    android:exported="false"  
+		    android:configChanges="orientation|screenSize|keyboardHidden"
+		>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name=".LockscreenActivity"
+			android:exported="false"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+		/>
+		
+		<activity android:name=".HelpActivity"
+			android:exported="false"
+		/>
+		
+		<activity android:name=".AdvancedScheduleActivity"
+		    android:exported="false"
+		/>
+
+		<uses-library android:name="android.test.runner" />
+
+		<service android:name=".NotificationService" 
+		    android:exported="false"
+		/>
+		
+		<receiver android:name=".SystemEventReceiver"
+			android:exported="false"    
+		>
+		    
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<category android:name="android.intent.category.LAUNCHER" />
+
+				<action android:name="android.intent.action.TIME_SET" />
+				<category android:name="android.intent.category.PREFERENCE" />
+
+				<action android:name="android.intent.action.TIMEZONE_CHANGED" />
+				<category android:name="android.intent.category.PREFERENCE" />
+				
+				<action android:name="android.intent.action.LOCALE_CHANGED" />
+				<category android:name="android.intent.category.PREFERENCE" />
+				
+			</intent-filter>
+		</receiver>
+		
+		<receiver android:name=".NotificationReceiver" 
+		    android:exported="false" 
+		/>
+
+	</application>
+
+	
+	<instrumentation android:targetPackage="at.jclehner.rxdroid" android:label="RxDroid Tests" android:name="android.test.InstrumentationTestRunner"/>
+	
+	  
+	</manifest> 

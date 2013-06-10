@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * RxDroid - A Medication Reminder
+ * Copyright (C) 2011-2013 Joseph Lehner <joseph.c.lehner@gmail.com>
+ *
+ *
+ * RxDroid is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RxDroid is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RxDroid.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ */
+-->
+
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:rxdroid="http://schemas.android.com/apk/res/at.jclehner.rxdroid"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:paddingRight="5dip"
+	
+	android:orientation="vertical"
+	android:descendantFocusability="beforeDescendants"
+	android:focusable="true"
+	
+	android:nextFocusDown="@+id/drug_name"	
+>
+	<!-- first line: icon + name -->
+		
+	<ImageView android:id="@+id/drug_icon"
+		android:layout_width="36dip"
+		android:layout_height="36dip"
+		
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_alignBottom="@+id/dose_container"
+									
+		android:scaleType="fitStart"
+		android:padding="1dip"
+		
+		
+		android:src="?attr/drugIconTablet"
+	/>
+	
+	<!--  
+	<TextView android:id="@+id/text_supply"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/drug_icon"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignBottom="@+id/dose_container"
+	    android:layout_toLeftOf="@id/dose_container"
+	    
+	    android:gravity="bottom"
+	    android:textAppearance="?android:attr/textAppearanceSmall"
+	    android:textSize="10sp"
+	    android:paddingLeft="3dip"
+	    android:text="36"
+	/>
+	-->	
+  
+  	<at.jclehner.rxdroid.widget.DrugNameView android:id="@id/drug_name"
+  		android:layout_width="wrap_content"
+  		android:layout_height="36dip"
+  		  		
+  		android:layout_toRightOf="@id/drug_icon"
+  		android:layout_toLeftOf="@+id/indicators"
+  		android:layout_alignParentTop="true"
+  		  		
+  		android:layout_marginLeft="5dp"
+  		  		  		  		
+  		android:gravity="center_vertical"
+  		android:text="Cocaine 100mg"
+  		android:ellipsize="marquee"
+  		android:singleLine="true"
+  		
+  		android:focusable="true"
+  		android:clickable="true"
+  		android:onClick="onDrugNameClick"
+  		  		  		
+  		style="@style/TextAppearance.Large.Clickable"
+  		  		
+  		android:nextFocusDown="@id/dose_container"
+	/>
+	
+	<!-- second line: dose views android:layout_alignBottom="@id/drug_icon" -->
+  	
+  	<include layout="@layout/drug_schedule"
+  	    android:layout_height="wrap_content"
+  	    android:layout_width="match_parent"
+  	
+  		android:focusable="true"
+  		android:descendantFocusability="afterDescendants"
+  		android:nextFocusDown="@+id/morning"
+  		
+  		android:layout_toRightOf="@id/drug_icon"
+  		android:layout_toLeftOf="@id/indicators"
+  		android:layout_below="@id/drug_name"
+  	/>  	
+  	
+  	<!--  
+  	<LinearLayout android:id="@id/dose_container"
+  		android:layout_height="wrap_content"
+  		android:layout_width="match_parent"
+  		
+  		android:focusable="true"
+  		android:descendantFocusability="afterDescendants"
+  		android:nextFocusDown="@+id/morning"
+  		
+  		android:layout_toRightOf="@id/drug_icon"
+  		android:layout_toLeftOf="@+id/indicators"
+  		android:layout_below="@id/drug_name"  		
+  	>  	
+  	
+	  	<at.jclehner.rxdroid.DoseView android:id="@id/morning"
+	  		android:layout_height="wrap_content"
+	  		android:layout_width="0dip"
+	  		android:layout_weight="1"
+	  		
+	  		android:nextFocusDown="@+id/noon"
+	  		
+	  		android:focusable="true"
+	  		android:onClick="onDoseViewClick"
+	  	/>	  	
+	  	
+		<include android:id="@+id/divider1" 
+	  		layout="@layout/divider" 
+	  	/>
+	  	
+	  	<at.jclehner.rxdroid.DoseView android:id="@id/noon"
+	  		android:layout_height="wrap_content"
+	  		android:layout_width="0dip"
+	  		android:layout_weight="1"
+	  		
+	  		android:nextFocusDown="@+id/evening"
+	  		
+	  		android:focusable="true"
+	  		android:onClick="onDoseViewClick"
+	  	/>
+	  	
+	  	<include android:id="@+id/divider2" 
+	  		layout="@layout/divider" 
+	  	/>
+	  	
+	  	<at.jclehner.rxdroid.DoseView android:id="@+id/evening"
+	  		android:layout_height="wrap_content"
+	  		android:layout_width="0dip"
+	  		android:layout_weight="1"
+	  		
+	  		android:nextFocusDown="@+id/night"
+	  		
+	  		android:focusable="true"
+	  		android:onClick="onDoseViewClick"
+	  	/>
+	  	
+	  	<include android:id="@+id/divider3" 
+	  		layout="@layout/divider" 
+	  	/>
+	  	
+	  	<at.jclehner.rxdroid.DoseView android:id="@+id/night"
+	  		android:layout_height="wrap_content"
+	  		android:layout_width="0dip"
+	  		android:layout_weight="1"
+	  		
+	  		android:focusable="true"
+	  		android:onClick="onDoseViewClick"
+	  	/>	  	
+	  		
+	  </LinearLayout>
+	  -->
+	  
+	  <LinearLayout android:id="@id/indicators"
+	  		android:layout_height="match_parent"
+	  		android:layout_width="48dip"
+	  		android:layout_alignBottom="@id/dose_container"
+	  		android:layout_alignParentRight="true"
+	  			  		 		
+	  		android:orientation="vertical"
+	  >
+		  	<at.jclehner.rxdroid.widget.DrugSupplyMonitor android:id="@+id/text_supply"
+			    android:layout_width="match_parent"
+			    android:layout_height="48dip"
+			    
+			    android:gravity="center"
+			    android:textAppearance="?android:attr/textAppearanceSmall"
+			    
+			    android:background="?attr/selectableItemBackground"
+			    android:clickable="true"
+			    android:onClick="onLowSupplyIndicatorClicked"
+			    rxdroid:onLongClick="onSupplyMonitorLongClick"
+			    
+			    android:paddingBottom="12dip"
+			    
+			    android:text="36"
+			/>
+		  	
+		  	<FrameLayout android:id="@+id/frame_history_menu"
+		  	    android:layout_width="wrap_content"
+		  	    android:layout_height="wrap_content"
+		  	    android:layout_gravity="center"
+		  	    android:background="?attr/selectableItemBackground"		 
+		  	>		  	    
+		  	
+			  	<ImageView android:id="@+id/img_drug_menu"
+			  	    android:layout_width="wrap_content"
+			  	    android:layout_height="wrap_content"
+			  	    android:layout_gravity="center_horizontal"
+			  	    
+			  	    android:src="?attr/iconList" 	    
+			  	    
+			  	/>
+			  	
+			  	<ImageView android:id="@+id/img_missed_dose_warning"
+			  	    android:layout_width="wrap_content"
+			  	    android:layout_height="wrap_content"
+			  	    android:layout_gravity="bottom|left"
+			  	    
+			  	    android:src="@drawable/ic_error_small"
+			  	/>
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	    
+		  	</FrameLayout>
+		  	<!-- android:layout_alignBottom="@id/drug_name" -->
+		  	
+		  	<!--
+		  	<ViewStub android:id="@+id/low_supply_indicator"
+		  		android:layout_width="match_parent"
+		  		android:layout_height="48dip"
+		  		android:layout="@layout/stub_low_supply_indicator"
+		  	/>  
+		  	  -->		
+	  	</LinearLayout>    
+</RelativeLayout>
