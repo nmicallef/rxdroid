@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * RxDroid - A Medication Reminder
+ * Copyright (C) 2011-2013 Joseph Lehner <joseph.c.lehner@gmail.com>
+ *
+ *
+ * RxDroid is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RxDroid is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with RxDroid.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ */
+-->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string-array name="drug_forms">
+        <item>@string/_title_tablet</item>
+        <item>@string/_title_injection</item>
+        <item>@string/_title_drop</item>
+        <item>@string/_title_gel</item>
+        <item>@string/_title_ring</item>
+        <!--
+    	<item>@string/_title_spray</item> 
+    	<item>@string/_title_other</item>
+        -->
+    </string-array>
+    <string-array name="drug_repeat">
+        <item>@string/_title_daily</item>
+        <item>@string/_title_every_n_days</item>
+        <item>@string/_title_pick_days</item>
+        <item>@string/_title_on_demand</item>
+        <item>@string/_title_21_days_on_7_days_off</item>
+    </string-array>
+    <string-array name="drug_notifications">
+        <item>@string/_title_doses_and_low_supplies</item>
+        <item>@string/_title_low_supplies_only</item>
+    </string-array>
+    <string-array name="alarm_repeat_times">
+        <item>@string/_title_dont_repeat</item>
+        <item>@string/_title_15_minutes</item>
+        <item>@string/_title_30_minutes</item>
+        <item>@string/_title_1_hour</item>
+        <item>@string/_title_2_hour</item>
+    </string-array>
+    <string-array name="alarm_repeat_times_values" tools:ignore="MissingTranslation">
+        <item>0</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+    </string-array>
+    <string-array name="history_size">
+        <item>@string/_title_history_1_month</item>
+        <item>@string/_title_history_2_months</item>
+        <item>@string/_title_history_6_months</item>
+        <item>@string/_title_history_1_year</item>
+        <item>@string/_title_history_unlimited</item>
+    </string-array>
+    
+    <string-array name="led_colors">
+        <item>@string/_title_off</item>
+        <item>@string/_title_default</item>
+        <item>@string/_title_red</item>        
+        <item>@string/_title_green</item>        
+        <item>@string/_title_blue</item>        
+        <item>@string/_title_yellow</item>
+        <item>@string/_title_orange</item>
+        <item>@string/_title_magenta</item>
+        <item>@string/_title_white</item>
+    </string-array>
+    
+    <string-array name="led_color_values" tools:ignore="MissingTranslation">
+        <item>0</item>
+        <item></item>
+        <item>ff0000</item>
+        <item>00ff00</item>
+        <item>0000ff</item>
+        <item>ffff00</item>
+        <item>ff6600</item>
+        <item>ff00ff</item>
+        <item>ffffff</item>        
+    </string-array>
+
+</resources>
