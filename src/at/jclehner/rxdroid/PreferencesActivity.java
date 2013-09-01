@@ -59,7 +59,6 @@ import at.jclehner.rxdroid.db.DatabaseHelper;
 import at.jclehner.rxdroid.db.DoseEvent;
 import at.jclehner.rxdroid.db.Drug;
 import at.jclehner.rxdroid.db.Schedule;
-import at.jclehner.rxdroid.ui.LayoutTestActivity;
 import at.jclehner.rxdroid.util.CollectionUtils;
 import at.jclehner.rxdroid.util.DateTime;
 import at.jclehner.rxdroid.util.Util;
@@ -536,15 +535,11 @@ public class PreferencesActivity extends PreferenceActivityBase implements
 
 					Database.create(drug);
 
-					Date date;
-
 					for(int i = 0; i != 100; ++i)
 					{
-						date = DateTime.add(DateTime.today(), Calendar.DAY_OF_MONTH, -i);
+						Date date = DateTime.add(DateTime.today(), Calendar.DAY_OF_MONTH, -i);
 						Database.create(new DoseEvent(drug, date, Schedule.TIME_MORNING, dose), Database.FLAG_DONT_NOTIFY_LISTENERS);
 					}
-
-
 
 					return true;
 				}
@@ -599,22 +594,6 @@ public class PreferencesActivity extends PreferenceActivityBase implements
 							throw new RuntimeException("Crash requested by user");
 						}
 					});
-					return true;
-				}
-			});
-		}
-
-		p = findPreference("key_debug_tablet_layout");
-		if(p != null)
-		{
-			p.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-
-				@Override
-				public boolean onPreferenceClick(Preference preference)
-				{
-//					Intent intent = new Intent(getApplicationContext(), LayoutTestActivity.class);
-//					intent.putExtra(LayoutTestActivity.EXTRA_LAYOUT_RES_ID, R.layout.mockup_activity_druglist);
-//					startActivity(intent);
 					return true;
 				}
 			});

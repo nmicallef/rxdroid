@@ -167,14 +167,12 @@ public class DoseLogFragment extends ExpandableListFragment
 			@Override
 			public boolean onMenuItemClick(MenuItem item)
 			{
-				final boolean isAllCollapsed = isAllCollapsed();
-
-				if(isAllCollapsed)
+				if(isAllCollapsed())
 					expandAll(true);
 				else
 					collapseAll();
 
-				Settings.putBoolean(Keys.LOG_IS_ALL_COLLAPSED, !isAllCollapsed);
+				Settings.putBoolean(Keys.LOG_IS_ALL_COLLAPSED, !isAllCollapsed());
 				//invalidateOptionsMenu();
 
 				return true;
